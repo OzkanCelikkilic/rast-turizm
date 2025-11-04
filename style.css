@@ -554,7 +554,7 @@ h2 {
     }
     /* Services Section Düzeni */
     .service-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     /* Contact Section Düzeni */
     .contact-layout {
@@ -604,4 +604,5 @@ h2 {
         margin: 0 10px;
     }
 }
+
 
