@@ -582,6 +582,10 @@ h2 {
         font-size: 1.8rem;
         margin-bottom: 30px;
     }
+    
+    .service-grid {
+        grid-template-columns: repeat(1, 1fr); 
+    }
 
     /* Quality Section */
     .quality-grid {
@@ -604,5 +608,6 @@ h2 {
         margin: 0 10px;
     }
 }
+
 
 
