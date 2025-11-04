@@ -235,7 +235,7 @@ h2 {
     min-height: 500px;
     display: flex;
     align-items: center;
-    background: url('images/image1.jpg') no-repeat center center/cover; /* Lütfen görseli güncelleyin */
+    background: url('images/image10.jpg') no-repeat center center/cover; /* Lütfen görseli güncelleyin */
 }
 
 .hero-overlay {
@@ -608,6 +608,7 @@ h2 {
         margin: 0 10px;
     }
 }
+
 
 
 
