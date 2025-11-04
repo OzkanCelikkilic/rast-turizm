@@ -1,0 +1,606 @@
+/*
+ * Haskurt Turizm - Style.css
+ * Renk Paleti:
+ * Ana Mavi (Koyu): #16366D (Logo Mavi)
+ * İkincil Mavi (Parlak): #0099DD (Logo Açık Mavi)
+ * Açık Zemin: #F8F9FA
+ */
+
+/* Genel Ayarlar ve Sıfırlama */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Sabit Navbar'ın içeriği örtmesini engeller */
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #16366D;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0099DD;
+}
+
+/* Yardımcı Sınıflar */
+.max-width {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: #F8F9FA;
+}
+
+.bg-dark {
+    background-color: #16366D;
+    color: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.subheading {
+    display: block;
+    color: #0099DD;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #16366D;
+    margin-bottom: 40px;
+}
+.bg-dark h2 {
+    color: #fff;
+}
+
+
+/* === Butonlar === */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #0099DD;
+    color: #fff;
+    border: 2px solid #0099DD;
+}
+
+.btn-primary:hover {
+    background-color: #16366D;
+    border-color: #16366D;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: #0099DD;
+    border-color: #0099DD;
+}
+.btn-map {
+    background-color: #16366D;
+    color: #fff;
+    border: 2px solid #16366D;
+}
+.btn-map:hover {
+    background-color: #0099DD;
+    border-color: #0099DD;
+}
+
+
+/* === 1. Navbar Stilleri === */
+.navbar-container {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+.navbar-container.scrolled {
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* İnce Navbar Yüksekliği */
+    min-height: 70px;
+    transition: all 0.3s;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    /* Logonun istenen büyük boyutu */
+    height: 150px;
+    width: auto;
+    /* Logoyu yukarı doğru iterek 70px'lik navbar'dan bağımsız hale getiririz */
+    margin-top: -15px; 
+    transition: height 0.3s, margin-top 0.3s;
+}
+
+.desktop-menu {
+    display: none; /* Mobil başta gizli */
+    list-style: none;
+    gap: 30px;
+}
+
+.desktop-menu a {
+    color: #16366D;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+.desktop-menu a:hover {
+    color: #0099DD;
+}
+
+/* Scroll Durumunda Küçülme */
+.navbar-container.scrolled .navbar {
+    /* Scroll olduğunda navbar biraz daha incelir */
+    min-height: 60px;
+}
+.navbar-container.scrolled .logo-area .logo-img {
+    /* Scroll olduğunda logoyu küçült (Örn: 60px) ve normal akışa döndür */
+    height: 80px;
+    margin-top: 0;
+}
+
+
+
+/* Mobil Menü */
+.menu-btn {
+    display: block; /* Mobilde göster */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #16366D;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    list-style: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.hidden {
+    display: none;
+}
+
+.mobile-menu li a {
+    display: block;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    color: #16366D;
+    font-weight: 500;
+}
+
+
+/* === 2. Hero Section === */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Tam ekran yüksekliği */
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background: url('images/school.jpg') no-repeat center center/cover; /* Lütfen görseli güncelleyin */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22, 54, 109, 0.85); /* Koyu mavi üzerine yarı saydamlık */
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #fff; /* Başlık rengi beyaz */
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.hero-cta-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === 3. About Section (Responsive Grid) === */
+.section-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.text-content h2 {
+    margin-top: 0;
+}
+
+.text-content p {
+    margin-bottom: 20px;
+}
+.image-content img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.text-link {
+    font-weight: 600;
+    color: #0099DD;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+
+/* === 4. Services Section === */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    border-top: 4px solid #0099DD;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #0099DD;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    color: #16366D;
+    margin-bottom: 15px;
+}
+
+.btn-small {
+    display: inline-block;
+    margin-top: 20px;
+    color: #16366D;
+    font-weight: 600;
+    border-bottom: 2px solid #0099DD;
+    padding-bottom: 5px;
+}
+
+/* === 5. Quality Section === */
+.quality-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.quality-item {
+    padding: 25px;
+    background-color: #F8F9FA;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+.quality-item:hover {
+    background-color: #e9ecef;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #16366D;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin: 0 auto 15px;
+}
+.quality-item h3 {
+    color: #16366D;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+/* === 6. Contact Section (Form Düzenlemesi) === */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.contact-info {
+    color: #fff;
+}
+.contact-info h2 {
+    color: #fff;
+    font-size: 2rem;
+}
+.contact-info p {
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.contact-details {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+.contact-details li i {
+    color: #0099DD;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    width: 25px;
+}
+.contact-details li a {
+    color: #fff;
+    opacity: 0.9;
+}
+.contact-details li a:hover {
+    color: #0099DD;
+    opacity: 1;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: #0099DD;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form h3 {
+    color: #16366D;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: #0099DD;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 153, 221, 0.2);
+}
+
+.btn-submit {
+    background-color: #0099DD;
+    color: #fff;
+    padding: 12px 25px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn-submit:hover {
+    background-color: #16366D;
+}
+
+
+/* === 7. Map Section === */
+.map-container {
+    height: 450px;
+    overflow: hidden;
+}
+
+.map-cta-area {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* === 8. Footer === */
+.footer {
+    background-color: #0f274d; /* Koyu mavinin bir ton koyusu */
+    color: #ddd;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content a {
+    color: #ddd;
+    margin-left: 15px;
+}
+.footer-content a:hover {
+    color: #0099DD;
+}
+
+
+/* === Responsive Ayarlamalar (Tablet ve Mobil) === */
+
+@media (min-width: 1024px) {
+    /* Masaüstü Menü Görünür */
+    .desktop-menu {
+        display: flex;
+    }
+    .menu-btn {
+        display: none;
+    }
+    /* About Section Düzeni */
+    .section-content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* Services Section Düzeni */
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* Contact Section Düzeni */
+    .contact-layout {
+        grid-template-columns: 1.2fr 1fr; /* Bilgi alanı daha geniş */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    .hero-cta-group {
+        flex-direction: column;
+    }
+    .btn-secondary {
+        margin-left: 0;
+    }
+
+    /* Genel Başlıklar */
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    /* Quality Section */
+    .quality-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .quality-item {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .footer-content a {
+        margin: 0 10px;
+    }
+}
