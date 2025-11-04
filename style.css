@@ -235,7 +235,7 @@ h2 {
     min-height: 500px;
     display: flex;
     align-items: center;
-    background: url('images/school.jpg') no-repeat center center/cover; /* Lütfen görseli güncelleyin */
+    background: url('images/image1.jpg') no-repeat center center/cover; /* Lütfen görseli güncelleyin */
 }
 
 .hero-overlay {
@@ -321,7 +321,7 @@ h2 {
 /* === 4. Services Section === */
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 40px;
 }
@@ -554,7 +554,7 @@ h2 {
     }
     /* Services Section Düzeni */
     .service-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
     /* Contact Section Düzeni */
     .contact-layout {
