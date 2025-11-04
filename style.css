@@ -157,7 +157,7 @@ h2 {
 
 .logo-img {
     /* Logonun istenen büyük boyutu */
-    height: 150px;
+    height: 140px;
     width: auto;
     /* Logoyu yukarı doğru iterek 70px'lik navbar'dan bağımsız hale getiririz */
     margin-top: -15px; 
@@ -604,3 +604,4 @@ h2 {
         margin: 0 10px;
     }
 }
+
