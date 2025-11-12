@@ -49,9 +49,8 @@ To run this project locally, no complex installation is required.
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/OzkanCelikkilic/rastturizm.com.git](https://github.com/OzkanCelikkilic/rastturizm.com.git)
+    git clone https://github.com/OzkanCelikkilic/rastturizm.com.git
     ```
-    *(Note: Replace with your actual repository URL if different.)*
 
 2.  **Navigate to the Directory:**
     ```bash
